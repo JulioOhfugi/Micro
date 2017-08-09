@@ -1,0 +1,21 @@
+1. O que são sistemas embarcados?
+ Um sistema embarcado é um computador construído para um único propósito da sua operação, ao invez
+ de ser generalizado, indepedente de sua constituição, podendo abranger desde lógicas combinacionais até processadores
+ 
+2. O que são sistemas microprocesssados?
+
+
+
+3. Apresente aplicações de sistemas embarcados:
+	(a) Para a indústria automotiva;
+  Airbag, portas, janelas, transmissão, freios...
+  
+	(b) Para eletrodomésticos;
+  Cameras digitais, celulares, video games, computadores, geladeiras...
+  
+	(c) Para automação industrial.
+  Máquinários de produção, como cnc(comando numérico computarizado)
+  
+4. Cite arquiteturas possíveis e as diferenças entre elas.
+
+5. Por que usamos o MSP430 na disciplina, ao invés de outro microcontrolador?
