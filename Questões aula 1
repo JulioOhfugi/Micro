@@ -3,8 +3,7 @@
  de ser generalizado, indepedente de sua constituição, podendo abranger desde lógicas combinacionais até processadores
  
 2. O que são sistemas microprocesssados?
-
-
+ É um computador completamente encapsulado ou dedicado ao dispositivo ou sistema que ele controla
 
 3. Apresente aplicações de sistemas embarcados:
 	(a) Para a indústria automotiva;
@@ -19,3 +18,4 @@
 4. Cite arquiteturas possíveis e as diferenças entre elas.
 
 5. Por que usamos o MSP430 na disciplina, ao invés de outro microcontrolador?
+ Por possuir cpu pequena, muitos registradores, modos de baixo consumo, temporizador, vários periféricos e opcoes de clock
