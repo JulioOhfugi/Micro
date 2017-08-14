@@ -1,0 +1,40 @@
+Quais as diferenças entre os barramentos de dados e de endereços?
+  Barramento de dados: em um caso de um miroprocessador de 8 bits requer um barramento de 8 linhas para transmitir dados de 8
+  bits em paralelp
+  Barramento de endereço: conduz endereços, ou seja, seleciona a origem ou destino de sinais transmitidos em um dos outros
+  barramentos ou em uma de suas linhas
+
+Quais são as diferenças entre as memórias RAM e ROM?
+  Ram: é um tipo de memória volátil, cujas informações são perdidas depois do desligamento da máquina, podendo ser feitos leitura
+  e escrita de dados.
+  Rom: oferece dados apenas para leitura, ou seja, você não pode gravar arquivos, apenas executar ou vizualizar os que já estiverem
+  nele. Além disso, é uma memória não volátil.
+
+
+Considere o código abaixo:
+
+#include <stdio.h>
+int main(void)
+{
+	int i;
+	printf("Insira um número inteiro: ");
+	scanf("%d", &i);
+	if(i%2)
+		printf("%d eh impar.\n");
+	else
+		printf("%d eh par.\n");
+	return 0;
+}
+Para este código, responda: (a) A variável i é armazenada na memória RAM ou ROM? Por quê? (b) O programa compilado a partir deste código é armazenado na memória RAM ou ROM? Por quê?
+  (a) É armazenada na memória RAM, pois é escrito ,na variável i, um valor toda vez que se inicializa o programa.
+  (b) Na memória ROM, pois é necessário que o programa seja salvo de modo que ele não desapareça toda vez que se inicializa o mesmo,
+  para que nåo seja necessária a escrita do programa novamente.
+
+Quais são as diferenças, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
+
+Considere a variável inteira i, armazenando o valor 0x8051ABCD. Se i é armazenada na memória a partir do endereço 0x0200, como ficam este byte e os seguintes, considerando que a memória é: (a) Little-endian; (b) Big-endian.
+  (a)203|202|201|200        (b)200|201|202|203
+     80 |51 |AB |CD             80|51 |AB |CD             
+    msb          lsb           msb          lsb 
+    
+Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas variáveis de 32 bits?
