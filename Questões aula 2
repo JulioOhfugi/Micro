@@ -31,7 +31,12 @@ Para este código, responda: (a) A variável i é armazenada na memória RAM ou 
   para que nåo seja necessária a escrita do programa novamente.
 
 Quais são as diferenças, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
-
+  Harvar: pela sua dupla ligação as memórias de dados  e progrma, processador pode ler uma instrução ao mesmo tempo que faz um acesso à memória de dados,
+  além disso, ele é mais rápido que a arquitetura de Von Neumann, devido a aplicação do pipeline, onde há  a execucão de uma instruçnao ao mesmo tempo em
+  que já busca a próxima.
+  Von Neumann: mais simples e menos eficiente que a arquitetura de Harvar, constituído por: uma memória, uma unidade aritmética e lógica (ALU),
+  uma unidade central de processamento (CPU), composta por diversos registradores, e uma Unidade de Controle (CU), sendo executados de forma independente.
+  
 Considere a variável inteira i, armazenando o valor 0x8051ABCD. Se i é armazenada na memória a partir do endereço 0x0200, como ficam este byte e os seguintes, considerando que a memória é: (a) Little-endian; (b) Big-endian.
   (a)203|202|201|200        (b)200|201|202|203
      80 |51 |AB |CD             80|51 |AB |CD             
