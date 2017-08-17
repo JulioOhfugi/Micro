@@ -45,8 +45,6 @@ for(;;)
         P1OUT = 0;
         P1OUT &= ~(BIT1 + BIT2);
         P1DIR = BIT1 + BIT2;
-        P1REN |= BIT3;
-        P1OUT |= BIT3;
 
        for(;;){
 
