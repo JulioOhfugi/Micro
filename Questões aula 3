@@ -1,25 +1,67 @@
-1.Dada uma variável a do tipo char (um byte), escreva os trechos de código em C para: (a) Somente setar o bit menos significativo de a. (b) Somente setar dois bits de a: o menos significativo e o segundo menos significativo. (c) Somente zerar o terceiro bit menos significativo de a. (d) Somente zerar o terceiro e o quarto bits menos significativo de a. (e) Somente inverter o bit mais significativo de a. (f) Inverter o nibble mais significativo de a, e setar o nibble menos significativo de a.
+1.Dada uma variável a do tipo char (um byte), escreva os trechos de código em C para:
+(a) Somente setar o bit menos significativo de a.
+a = a|0x01
+
+(b) Somente setar dois bits de a: o menos significativo e o segundo menos significativo.
+a = a|0x03
+
+(c) Somente zerar o terceiro bit menos significativo de a. 
+a = a&0xFB;
+
+(d) Somente zerar o terceiro e o quarto bits menos significativo de a.
+a = a&0xF3;
+
+(e) Somente inverter o bit mais significativo de a. 
+a = a^0x80; 
+
+(f) Inverter o nibble mais significativo de a, e setar o nibble menos significativo de a.
+a = a^0x80;    a = a&0x01;
 
 2.Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.
 #include<msp430g2553.h>
 void main(void)
   {
     WDTCTI = WDTPW|WDTHOLD;
-    PIDIR = BIT0+BIT1;
-    POUT = BIT0;
+    P1DIR = BIT0+BIT1;
+    P1OUT = BIT0;
   }
 for(;;)
   {
-    if(POUT == BIT0)
-        POUT = BIT1;
+    if(P1OUT == BIT0)
+        P1OUT = BIT1;
+        __delay_cycles(1000);
      else
-        POUT = BIT0;
+        P1OUT = BIT0;
+        __delay_cycles(1000);
     }
-
-    
 
 
 3.Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar o botão.
+ #include <msp430g2553.h>
+ 
+    void main (){
+
+        WDTCTL = WDTPW|WDTHOLD;
+        P1OUT = 0;
+        P1OUT &= ~(BIT1 + BIT2);
+        P1DIR = BIT1 + BIT2;
+        P1REN |= BIT3;
+        P1OUT |= BIT3;
+
+       for(;;){
+
+            if(P1IN & BIT3==0)
+                P1OUT &= ~(BIT1 + BIT2);
+            else
+                P1OUT = (BIT1 + BIT2);    
+                __delay_cycles(100000);
+                P1OUT &= ~(BIT1 + BIT2);                
+                __delay_cycles(100000);
+                P1OUT = (BIT1 + BIT2);  
+                __delay_cycles(100000);
+                P1OUT &= ~(BIT1 + BIT2);                                  
+      }
+
 
 4.Considerando a placa Launchpad do MSP430, faça uma função em C que pisca os dois LEDs uma vez.
 
