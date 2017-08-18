@@ -57,7 +57,10 @@ add.w 2(R9),4(R9)
 add.w R4,R4
 add.w R6,R6
 add.w R6,R6
-mov 
-
+mov.w R4,6(R9)
+sub R6,6(R9)
 
 (f) A[3] = 2*(f - 2*h);
+add.w R6,R6
+
+
