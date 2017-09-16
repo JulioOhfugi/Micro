@@ -33,8 +33,80 @@ quadrada de S (ou seja, a variável x) é fornecida pelo registrador R15 também
 
 int Potencia(int x, int N);
 
+int Multiplicacao(int x, int y){
+
+    int multipicacao=0;
+    if(y==0)
+    return 0;
+    else{
+        while(y>0){
+        multiplicacao = multiplicacao + x;
+        y--;
+        }
+    }
+return multiplicacao;
+
+}
+
+
+int Potencia(int x, int N){
+
+	int i=1;
+	int resultado = x;
+
+	if(N==0)
+	return 1;
+	if(N==1)
+        return x;
+	if( N!=0 && N != 1)
+		while(i<N){
+		result = Multiplicacao(result,x);
+		i++;
+		}
+	 return result;
+	 
+	}
+
+
 (b) Escreva a sub-rotina equivalente na linguagem Assembly do MSP430. x e n são fornecidos através dos registradores R15 e 
 R14, respectivamente, e a saída deverá ser fornecida no registrador R15.
+
+		MOV R15,R12
+		MOV R15, R11
+		MOV #1, R13
+		CMP.W #0,R14
+		JEQ.W CASE_1
+		CMP.W #1, R14
+		JEQ.W END
+		JMP.W POTENCIA
+		
+
+POTENCIA:	CMP R14, R13
+		JEQ END
+		JNE.W MULT
+		INC.W R13
+		MOV R15, R11
+		JMP POTENCIA
+		
+MULT:		ADD.W R15,R11
+		DEC.W R12
+		COMP #1, R12
+		JNE MULT
+		RET
+	
+
+CASE_1:		MOV#1,R15
+		JMP END
+		
+
+
+
+
+
+END: 
+
+
+
 
 3. Escreva uma sub-rotina na linguagem Assembly do MSP430 que calcula a divisão de a por b, onde a, b e o valor de saída são 
 inteiros de 16 bits. a e b são fornecidos através dos registradores R15 e R14, respectivamente, e a saída deverá ser 
