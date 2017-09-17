@@ -98,14 +98,7 @@ MULT:		ADD.W R15,R11
 CASE_1:		MOV#1,R15
 		JMP END
 		
-
-
-
-
-
-END: 
-
-
+END: RET 
 
 
 3. Escreva uma sub-rotina na linguagem Assembly do MSP430 que calcula a divisão de a por b, onde a, b e o valor de saída são 
@@ -116,7 +109,7 @@ fornecida através do registrador R15.
 DIVISAO:	SUB.W R14,R15
 		INC.W R13
 		COMP.W #0, R15
-		JEQ END
+		JL END
 		JMP DIVISAO
 END:		MOV.E R13, R15
 		RET
@@ -126,10 +119,55 @@ END:		MOV.E R13, R15
 saída são inteiros de 16 bits. a e b são fornecidos através dos registradores R15 e R14, respectivamente, e a saída deverá 
 ser fornecida através do registrador R15.
 
+
+DIVISAO:	COMP.W R14, R15
+		JL END
+		SUB.W R14,R15
+		JMP DIVISAO
+END:		RET
+
+
+
+
 5. (a) Escreva uma função em C que indica a primalidade de uma variável inteira sem sinal, retornando o valor 1 se o número for
 primo, e 0, caso contrário. Siga o seguinte protótipo:
 
 int Primalidade(unsigned int x);
+
+int divisao(x,y){
+
+	while(x>0){
+		x=x-y;
+	}
+
+	return x;
+}
+
+int Primalidade(unsigned int x){
+
+	int i=0;
+	int resto;
+	int cont=0;
+	
+	while(i<x){
+		resto= divisao(x,i);
+		if(resto==0){
+			cont++;
+		}
+		i++;
+	}
+	
+	if(cont==2){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+
+
+
+
 
 (b) Escreva a sub-rotina equivalente na linguagem Assembly do MSP430. A variável de entrada é fornecida pelo registrador R15,
 e o valor de saída também.
