@@ -112,6 +112,16 @@ END:
 inteiros de 16 bits. a e b são fornecidos através dos registradores R15 e R14, respectivamente, e a saída deverá ser 
 fornecida através do registrador R15.
 
+		COMP.W R14, R15
+DIVISAO:	SUB.W R14,R15
+		INC.W R13
+		COMP.W #0, R15
+		JEQ END
+		JMP DIVISAO
+END:		MOV.E R13, R15
+		RET
+
+
 4. Escreva uma sub-rotina na linguagem Assembly do MSP430 que calcula o resto da divisão de a por b, onde a, b e o valor de 
 saída são inteiros de 16 bits. a e b são fornecidos através dos registradores R15 e R14, respectivamente, e a saída deverá 
 ser fornecida através do registrador R15.
