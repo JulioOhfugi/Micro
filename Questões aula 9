@@ -1,6 +1,14 @@
 1.Escreva uma função em C que faz o debounce de botões ligados à porta P1.
 
 
+#pragma vector = PORT1_VECTOR
+__interrupt void interrupcao_P1(void){
+
+    P1OUT ^= LEDS;
+    __delay_cycles(100000);
+    P1IFG &= ~P1;
+    
+}
 
 2.Escreva um código em C que lê 9 botões multiplexados por 6 pinos, e pisca os LEDs da placa Launchpad de acordo com os botões.
 Por exemplo, se o primeiro botão é pressionado, os LEDs piscam uma vez; se o segundo botão é pressionado, os LEDs piscam duas vezes;
