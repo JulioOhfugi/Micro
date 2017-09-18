@@ -2,7 +2,7 @@ Para todas as questões, utilize os LEDs e/ou os botões da placa Launchpad do M
 
 1.Escreva um código em C que pisca os LEDs ininterruptamente.
 
- #include "io430.h"
+#include <msp430g2553.h>
   int main(void){
   
     WDTCTL = WDTPW + WDTHOLD;
@@ -18,7 +18,7 @@ Para todas as questões, utilize os LEDs e/ou os botões da placa Launchpad do M
 2.Escreva um código em C que pisca os LEDs ininterruptamente. No ciclo que pisca os LEDs, o tempo que os LEDs ficam ligados deve ser duas 
 vezes maior do que o tempo que eles ficam desligados.
 
- #include "io430.h"
+#include <msp430g2553.h>
   int main(void){
   
     WDTCTL = WDTPW + WDTHOLD;
@@ -37,7 +37,7 @@ vezes maior do que o tempo que eles ficam desligados.
 
 3.Escreva um código em C que acende os LEDs quando o botão é pressionado.
 
- #include "io430.h"
+ #include <msp430g2553.h>
   int main(void){
   
     WDTCTL = WDTPW + WDTHOLD;
@@ -56,7 +56,7 @@ vezes maior do que o tempo que eles ficam desligados.
 
 4.Escreva um código em C que pisca os LEDs ininterruptamente somente se o botão for pressionado.
 
-#include "io430.h"
+#include <msp430g2553.h>
   int main(void){
   
     WDTCTL = WDTPW + WDTHOLD;
