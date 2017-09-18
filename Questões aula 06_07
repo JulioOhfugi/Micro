@@ -166,9 +166,6 @@ int Primalidade(unsigned int x){
 
 
 
-
-
-
 (b) Escreva a sub-rotina equivalente na linguagem Assembly do MSP430. A variável de entrada é fornecida pelo registrador R15,
 e o valor de saída também.
 
@@ -188,6 +185,20 @@ Por exemplo: [5 4 3 2 1] e [90 23 20 10] estão ordenados de forma decrescente. 
 O primeiro endereço do vetor é fornecido pelo registrador R15, e o tamanho do vetor é fornecido pelo registrador R14. 
 A saída deverá ser fornecida no registrador R15, valendo 1 quando o vetor estiver ordenado de forma decrescente, e valendo
 0 em caso contrário.
+
+		MOV.W #0,R13
+		MOV.W #0,R12
+		ADD.W #2,R12
+		ADD.W R15,R13
+		ADD.W R15,R12
+		COMP 0(R12),0(R13)
+		JL DESORDENADO
+DECRESCENTE:	MOV.W #1,R15
+		RET
+DESORDENADO:	MOV.W #0, R15
+		RET
+	
+
 
 9. Escreva uma sub-rotina na linguagem Assembly do MSP430 que calcula o produto escalar de dois vetores, a e b. O primeiro
 endereço do vetor a deverá ser passado através do registrador R15, o primeiro endereço do vetor b deverá ser passado através
