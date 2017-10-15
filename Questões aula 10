@@ -42,6 +42,42 @@ P1OUT = GND_GND_VCC; // Liga Leds 5 e 6
 5.Defina a função void main(void){} para controlar 6 LEDs de uma árvore de natal usando o hardware da questão 3. Acenda os LEDs de forma
 que um ser humano veja os LEDs L1 e L2 acesos juntos por um tempo, depois os LEDs L3 e L4 juntos, e depois os LEDs L5 e L6 juntos.
 
+#include<msp430g2553.h>
+#define BTN BIT2
+
+int main(void){
+
+	WDTCIL= WDTPW|WDTHOLD;
+	int 1;
+	P1DIR=0x0F;
+	P1out=0;
+	while(1){
+	for(1=0;i<0xFFFF;i++){
+	P1OUT=0x01;
+	P1out_0x02;
+	for(1=0;i<0xFFFF;i++{
+	P1OUT=0X03;
+	P1OUT=0X04;
+	}
+	for(i=0.i<0xFFFF;i++){
+	P1OUT=0X05;
+	P1OUT=0X06;
+	}
+	}
+	}
+	
+	
+	
+	}
+	
+	
+	
+
+}
+
+
+
+
 6.Defina a função void EscreveDigito(volatile char dig); que escreve um dos dígitos 0x0-0xF em um único display de 7 segmentos via porta 
 P1, baseado na figura abaixo. Considere que em outra parte do código os pinos P1.0-P1.6 já foram configurados para corresponderem aos LEDs
 A-G, e que estes LEDs possuem resistores externos para limitar a corrente.
